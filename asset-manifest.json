@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cymbal.live/static/css/main.5f361e03.chunk.css",
+    "main.js": "/cymbal.live/static/js/main.04fb3d51.chunk.js",
+    "main.js.map": "/cymbal.live/static/js/main.04fb3d51.chunk.js.map",
+    "runtime-main.js": "/cymbal.live/static/js/runtime-main.b4aad9f4.js",
+    "runtime-main.js.map": "/cymbal.live/static/js/runtime-main.b4aad9f4.js.map",
+    "static/js/2.b370cc9e.chunk.js": "/cymbal.live/static/js/2.b370cc9e.chunk.js",
+    "static/js/2.b370cc9e.chunk.js.map": "/cymbal.live/static/js/2.b370cc9e.chunk.js.map",
+    "index.html": "/cymbal.live/index.html",
+    "precache-manifest.f6948282c65cf57467d1bf986e763a16.js": "/cymbal.live/precache-manifest.f6948282c65cf57467d1bf986e763a16.js",
+    "service-worker.js": "/cymbal.live/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/cymbal.live/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.b370cc9e.chunk.js.LICENSE.txt": "/cymbal.live/static/js/2.b370cc9e.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/cymbal.live/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b4aad9f4.js",
+    "static/js/2.b370cc9e.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.04fb3d51.chunk.js"
+  ]
+}
