@@ -1,15 +1,24 @@
 import React from 'react';
 import './App.css';
-import NowPlaying from './components/NowPlaying.js'
+import ShowContainer from './components/ShowContainer'
 
 function App() {
   return (
     <div>
       <div>
-        cymbal.live
+        <h1>cymbal.live</h1>
       </div>
       <div>
-        <NowPlaying name="Brent"/>
+        say hello
+      </div>
+      <div>
+        request feature
+      </div>
+      <div>
+        support
+      </div>
+      <div>
+        <ShowContainer />
       </div>
     </div>
   );
