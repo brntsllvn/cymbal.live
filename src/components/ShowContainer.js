@@ -27,9 +27,10 @@ class ShowContainer extends React.Component {
 
     render () {
         const shows = this._getUpcomingShows();
+        const show = shows[1];
         return (
             <div>
-                <NowPlaying />
+                <NowPlaying show={show}/>
                 <ComingUp shows={shows} />
             </div>
         ); 

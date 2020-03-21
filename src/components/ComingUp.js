@@ -6,6 +6,7 @@ class ComingUp extends React.Component {
         const shows = this.props.shows
         return (
             <div>
+                <h1>Coming up...</h1>
                 {
                     shows.map(show => {
                         return (
