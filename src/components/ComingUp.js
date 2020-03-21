@@ -1,27 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class ComingUp extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
-    _getUpcomingShows() {
-        return ["hi","bye","moo"]
-    }
-
-    render () {
-        const shows = this._getUpcomingShows();
+    render() {
+        const shows = this.props.shows
         return (
             <div>
                 {
                     shows.map(show => {
-                        return <p>{show}</p>
+                        return (
+                            <p>
+                                {
+                                    `${show.time}
+                                 ${show.artist} 
+                                 ${show.link}`
+                                }
+                            </p>
+                        )
                     })
                 }
             </div>
-        ); 
+        );
     }
-    
+
+}
+
+ComingUp.propTypes = {
+    shows: PropTypes.any.isRequired
 }
 
 export default ComingUp;

@@ -2,13 +2,27 @@ import React from 'react';
 import NowPlaying from './NowPlaying';
 import ComingUp from './ComingUp';
 
-class ShowContainer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
+class ShowContainer extends React.Component {    
     _getUpcomingShows() {
-        return ["hi","bye","moo"]
+        const shows = [
+            { 
+                'time': 1,
+                'artist': 'pedrothelion',
+                'link': 'example.com'
+            },
+            { 
+                'time': 2,
+                'artist': 'pedrothelion',
+                'link': 'example.com'
+            },
+            { 
+                'time': 3,
+                'artist': 'pedrothelion',
+                'link': 'example.com'
+            }
+
+        ]
+        return shows
     }
 
     render () {
@@ -16,7 +30,7 @@ class ShowContainer extends React.Component {
         return (
             <div>
                 <NowPlaying />
-                <ComingUp />
+                <ComingUp shows={shows} />
             </div>
         ); 
     }

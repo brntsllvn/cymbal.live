@@ -1,10 +1,6 @@
 import React from 'react';
 
-class NowPlaying extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
+class NowPlaying extends React.Component {    
     render () {
         return (
             <h1>Now playing</h1>
