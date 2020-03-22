@@ -11,7 +11,7 @@ class ComingUp extends React.Component {
                     shows.map(show => {
                         return (
                             <p key={show.hashCode}>
-                                {show.time} 
+                                {show.time.toString()} 
                                 {show.artist}
                                 <a href={show.link} target='_blank'>link</a>
                             </p>

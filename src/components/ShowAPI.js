@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 class ShowAPI {
     async getShows() {
         const fileContents = await this.fetch();
@@ -18,19 +20,32 @@ class ShowAPI {
             const showData = raw.split('||');
             if (
                 !showData ||
-                showData.length < 3
+                showData.length < 3 ||
+                !this.datetimeParseable(showData[1])
             ) {
                 return;
             }
             let show = {
                 'artist': showData[0],
-                'time': showData[1],
+                'time': this.momentize(showData[1]),
                 'link': showData[2],
                 'hashCode': this.hash(raw)
             }
             shows.push(show)
         })
         return shows;
+    }
+
+    datetimeParseable(strDate) {
+        try {
+            return moment(strDate).isValid();
+        } catch (error) {
+            console.error(`Cannot parse this weird date => ${strDate}`)
+        }
+    }
+
+    momentize(strDate) {
+        return moment(strDate);
     }
 
     hash(str) {

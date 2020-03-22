@@ -7,7 +7,7 @@ class ShowContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            nowPlaying: {},
+            nowPlaying: 'Check back soon!',
             shows: []
         }
     }
@@ -20,6 +20,9 @@ class ShowContainer extends React.Component {
 
     async componentDidMount() {
         const shows = await this._getUpcomingShows(); 
+        if (!shows || !Array.isArray(shows) || shows.length < 1) {
+            return;
+        }
         this.setState({ 
             nowPlaying: shows[0],
             shows: shows,
