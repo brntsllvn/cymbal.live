@@ -11,11 +11,9 @@ class ComingUp extends React.Component {
                     shows.map(show => {
                         return (
                             <p key={show.hashCode}>
-                                {
-                                    `${show.time}
-                                 ${show.artist} 
-                                 ${show.link}`
-                                }
+                                {show.time} 
+                                {show.artist}
+                                <a href={show.link} target='_blank'>link</a>
                             </p>
                         )
                     })
