@@ -16,9 +16,15 @@ class ShowAPI {
         let shows = [];
         showRaw.map(raw => {
             const showData = raw.split('||');
+            if (
+                !showData ||
+                showData.length < 3
+            ) {
+                return;
+            }
             let show = {
-                'time': showData[0],
-                'artist': showData[1],
+                'artist': showData[0],
+                'time': showData[1],
                 'link': showData[2],
                 'hashCode': this.hash(raw)
             }
@@ -28,11 +34,12 @@ class ShowAPI {
     }
 
     hash(str) {
+        // from the wild interwebs...
         var hash = 0, i, chr;
             for (i = 0; i < this.length; i++) {
                 chr   = this.charCodeAt(i);
                 hash  = ((hash << 5) - hash) + chr;
-                hash |= 0; // Convert to 32bit integer
+                hash |= 0;
             }
         return hash;
     }
