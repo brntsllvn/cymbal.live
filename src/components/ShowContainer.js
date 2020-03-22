@@ -1,41 +1,36 @@
 import React from 'react';
 import NowPlaying from './NowPlaying';
 import ComingUp from './ComingUp';
-import ShowFileParser from './ShowFileParser';
+import ShowAPI from './ShowAPI';
 
 class ShowContainer extends React.Component {    
-    _getUpcomingShows() {
-        const parser = new ShowFileParser();
-        const blah = parser.parse();
-        
-        
-        const shows = [
-            { 
-                'time': 1,
-                'artist': 'pedrothelion',
-                'link': 'example.com'
-            },
-            { 
-                'time': 2,
-                'artist': 'pedrothelion',
-                'link': 'example.com'
-            },
-            { 
-                'time': 3,
-                'artist': 'pedrothelion',
-                'link': 'example.com'
-            }
-        ]
-        return shows
+    constructor(props) {
+        super(props);
+        this.state = {
+            nowPlaying: {},
+            shows: []
+        }
+    }
+
+    async _getUpcomingShows() {
+        const api = new ShowAPI();
+        const shows = await api.getShows();
+        return shows;
+    }
+
+    async componentDidMount() {
+        const shows = await this._getUpcomingShows(); 
+        this.setState({ 
+            nowPlaying: shows[0],
+            shows: shows,
+        })
     }
 
     render () {
-        const shows = this._getUpcomingShows();
-        const show = shows[1];
         return (
             <div>
-                <NowPlaying show={show}/>
-                <ComingUp shows={shows} />
+                <NowPlaying show={this.state.nowPlaying}/>
+                <ComingUp shows={this.state.shows} />
             </div>
         ); 
     }

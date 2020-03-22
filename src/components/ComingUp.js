@@ -10,7 +10,7 @@ class ComingUp extends React.Component {
                 {
                     shows.map(show => {
                         return (
-                            <p>
+                            <p key={show.hashCode}>
                                 {
                                     `${show.time}
                                  ${show.artist} 
